@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class SampleBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float moveSpeed = 10f;
+
+    private Rigidbody2D rb;
+
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float moveX = 0;
+        float moveY = 0;
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveY = 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveY = -1;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveX = -1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = 1;
+        }
+
+        Vector2 movement = new Vector2(moveX, moveY).normalized * moveSpeed;
+        rb.velocity = movement;
     }
 }
