@@ -5,6 +5,7 @@ using UnityEngine;
 public class SampleBehaviour : MonoBehaviour
 {
     public float moveSpeed = 10f;
+    public SpriteRenderer spriteRenderer;
 
     private Rigidbody2D rb;
 
@@ -28,10 +29,12 @@ public class SampleBehaviour : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
+            spriteRenderer.flipX = false;
             moveX = -1;
         }
         if (Input.GetKey(KeyCode.D))
         {
+            spriteRenderer.flipX = true;
             moveX = 1;
         }
 
