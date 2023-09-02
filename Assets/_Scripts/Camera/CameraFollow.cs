@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target; // target for the camera to follow
-    public float smoothSpeed = 0.125f; // speed of the camera
 
     private Vector3 offset; // offset of the camera
 
@@ -19,7 +18,6 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         Vector3 desiredPosition = target.position + offset; // set the desired position to the target's position plus the offset
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed); // set the smoothed position to the linear interpolation between the camera's position and the desired position, using the smooth speed
-        transform.position = smoothedPosition; // set the camera's position to the smoothed position
+        transform.position = desiredPosition; // set the camera's position to the smoothed position
     }
 }
