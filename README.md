@@ -1,2 +1,2 @@
 # Left-behind
-Medieval-based platform video game made with Unity game engine
+A medieval-based platform video game made with Unity Game Engine
